@@ -35,7 +35,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'App',
   data(){
@@ -44,7 +43,7 @@ export default {
       name: '',
       surname: '',
       phone: '',
-      notes: []
+      notes: [],
     };
   },
   methods: {
@@ -53,12 +52,13 @@ export default {
         name: this.name,
         surname: this.surname,
         phone: this.phone
-        };
-      this.$http.post("http://localhost:3000/notes", note).then(res => console.log(res));
+        }
+
+      this.$http.post(`${process.env.VUE_APP_API_HOST}/notes`, note).then(res => console.log(res));
       this.onLoad();
     },
     onLoad(){
-      this.$http.get("http://localhost:3000/notes")
+      this.$http.get(`${process.env.VUE_APP_API_HOST}/notes`)
           .then(res => res.json())
           .then(res => this.notes = res)
     }

@@ -1,11 +1,14 @@
 {
-  "name": "lab31",
+  "name": "lab35",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "start": "node ./src/index.js",
     "test": "jest --coverage --forceExit",
-    "notes": "./db.json"
+    "notes": "./db.json",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "bootstrap-vue": "^2.1.0",
